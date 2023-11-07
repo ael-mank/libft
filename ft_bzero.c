@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 08:49:07 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/07 08:49:24 by ael-mank         ###   ########.fr       */
+/*   Created: 2023/11/07 11:03:32 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/07 11:51:12 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	fr_bzero(void *ptr, size_t n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	size_t	i;
+	char	*ptrchar;
+
+	i = 0;
+	ptrchar = (char *)ptr;
+	while (i < n)
+	{
+		ptrchar[i] = 0;
+		i++;
+	}
 }
