@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 11:53:00 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/07 14:34:47 by ael-mank         ###   ########.fr       */
+/*   Created: 2023/11/07 14:39:29 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/07 14:46:47 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *str, int c)
+char	*strrchr(const char *str, int c)
 {
+	char	*last;
+
+	last = NULL;
 	while (*str)
 	{
 		if (*str == c)
 		{
-			return ((char *)str);
+			last = (char *)str;
 		}
 		str++;
 	}
 	if (c == '\0')
 	{
-		return ((char *)str);
+		last = (char *)str;
 	}
-	return (NULL);
+	return (last);
 }
