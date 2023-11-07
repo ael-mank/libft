@@ -1,28 +1,28 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/07 10:05:49 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/07 11:48:31 by waz              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memset(void *pointer, int value, int count)
+#include "libft.h"
+
+void	*ft_memset(void *ptr, int value, size_t size)
 {
-    int i;
-    char    *ptr = pointer;
+	size_t	i;
+	char	*ptrchar;
 
-    i = 0;
-    while (i < count)
-    {
-        ptr[i] = value;
-        i++;
-    }
-    return (pointer);
-}
-
-int main()
-{
-    char tab[] = "hello";
-
-    char *y = ft_memset(tab, 48, 5);
-
-    for (int i = 0; i < 5; i++)
-    {   
-        //printf("%d", 1);
-        printf("%c", y[i]);
-    }
+	i = 0;
+	ptrchar = (char *)ptr;
+	while (i < size)
+	{
+		ptrchar[i] = value;
+		i++;
+	}
+	return (ptr);
 }
