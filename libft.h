@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/07 11:52:16 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:41:38 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memset(void *ptr, int value, size_t size);
 void	fr_bzero(void *ptr, size_t n);
+char	*strchr(const char *str, int c);
 
 #endif
