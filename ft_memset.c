@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:05:49 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/07 11:48:31 by waz              ###   ########.fr       */
+/*   Updated: 2023/11/08 11:01:52 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memset(void *ptr, int value, size_t size)
 	char	*ptrchar;
 
 	i = 0;
-	ptrchar = (char *)ptr;
+	ptrchar = (unsigned char *)ptr;
 	while (i < size)
 	{
 		ptrchar[i] = value;
