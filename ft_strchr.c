@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:53:00 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 15:07:28 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:34:56 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str)
+	unsigned int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (NULL);
+	while (str[i])
 	{
-		if (*str == c)
-		{
-			return ((char *)str);
-		}
-		str++;
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i++;
 	}
-	if (c == '\0')
-	{
-		return ((char *)str);
-	}
+	if (str[i] == c)
+		return ((char *)&str[i]);
 	return (NULL);
 }
