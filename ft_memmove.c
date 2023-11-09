@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 10:05:49 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 11:39:04 by ael-mank         ###   ########.fr       */
+/*   Created: 2023/11/09 09:51:38 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/09 10:14:17 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t size)
 {
 	size_t	i;
-	unsigned char	*ptrchar;
+	char	*d;
+	char	*s;
 
 	i = 0;
-	ptrchar = (unsigned char *)ptr;
-	while (i < size)
+	d = (char *)dest;
+	s = (char *)src;
+	if (d > s)
 	{
-		ptrchar[i] = value;
-		i++;
+		while (size-- > 0)
+		{
+			d[size] = s[size];
+		}
 	}
-	return (ptr);
+	else
+	{
+		while (i < size)
+		{
+			d[i] = s[i];
+			i--;
+		}
+	}
+	return (dest);
 }

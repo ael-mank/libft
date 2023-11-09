@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/08 11:10:39 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:40:20 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ void	fr_bzero(void *ptr, size_t n);
 char	*strchr(const char *str, int c);
 char	*strrchr(const char *str, int c);
 int		ft_strncmp(const char *first, const char *second, size_t length);
+void	*ft_memcpy(void *dest, const void *src, size_t count);
+void	*ft_memmove(void *dest, const void *src, size_t size);
+size_t	ft_strlcpy(char	*dest, char	*src, size_t destsize);
 
 #endif
