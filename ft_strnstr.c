@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 10:05:49 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 14:09:55 by ael-mank         ###   ########.fr       */
+/*   Created: 2023/11/09 15:48:20 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/09 16:03:51 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	char	*ptrchar;
+	size_t	j;
 
+	if (!big || !little)
+		return (NULL);
 	i = 0;
-	ptrchar = (char *)ptr;
-	while (i < size)
+	j = 0;
+	if (little[j] == '\0')
+		return ((char *)big);
+	while (big[i] && little[j] && i < len)
 	{
-		ptrchar[i] = value;
+		while (big[i + j] && (little[j] == big[i + j]))
+			j++;
+		if (little[j] == '\0')
+			return ((char *)big + i);
 		i++;
+		j = 0;
 	}
-	return (ptr);
+	return (0);
 }

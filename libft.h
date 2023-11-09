@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/08 21:46:32 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:46:56 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,17 @@ int		ft_strlen(char *str);
 int		ft_isalnum(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-void	*ft_memset(void *ptr, int value, size_t size);
-void	fr_bzero(void *ptr, size_t n);
-char	*strchr(const char *str, int c);
-char	*strrchr(const char *str, int c);
 int		ft_strncmp(const char *first, const char *second, size_t length);
+int		ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
+void	*ft_memset(void *ptr, int value, size_t size);
+void	ft_bzero(void *ptr, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t count);
+void	*ft_memmove(void *dest, const void *src, size_t size);
+void	*ft_memchr(const void *memblck, int searchedChar, size_t size);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int c);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+size_t	ft_strlcpy(char	*dest, char	*src, size_t destsize);
+size_t	ft_strlcat(char *dest, char *src, size_t destsize);
 
 #endif
