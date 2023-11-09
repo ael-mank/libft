@@ -6,10 +6,20 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:49:15 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/08 13:54:30 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:34:51 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str){int	i;i = 0;while (str[i]){i++;}return (i);}
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
