@@ -15,5 +15,9 @@ $(LIBRARY_NAME): $(OBJ_FILES)
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC_FILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
+
 clean:
 	rm -f *.o $(LIBRARY_NAME)
