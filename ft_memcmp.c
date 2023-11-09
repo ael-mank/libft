@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 09:51:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 14:56:12 by ael-mank         ###   ########.fr       */
+/*   Created: 2023/11/09 14:19:32 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/09 14:32:45 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t size)
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {
 	size_t	i;
-	char	*d;
-	char	*s;
+	char	*p1;
+	char	*p2;
 
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
-	if (d == NULL || s == NULL)
+	p1 = (char *)ptr1;
+	p2 = (char *)ptr2;
+	if (p1 == NULL || p2 == NULL)
 		return (0);
-	if (d > s)
-		while (size-- > 0)
-			d[size] = s[size];
-	else
-		while (i < size)
+	i = 0;
+	
+	while (i < size)
+	{
+		if (p1[i] != p2[i])
 		{
-			d[i] = s[i];
-			i++;
+			return (p2[i] - p1[i]);
 		}
-	return (dest);
+		i++;
+	}
+	return (0);
 }

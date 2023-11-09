@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 14:08:05 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:27:55 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_isalnum(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strncmp(const char *first, const char *second, size_t length);
+int		ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
 void	*ft_memset(void *ptr, int value, size_t size);
 void	ft_bzero(void *ptr, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t count);
