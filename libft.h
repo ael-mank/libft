@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 14:27:55 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:54:12 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_memchr(const void *memblck, int searchedChar, size_t size);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 size_t	ft_strlcpy(char	*dest, char	*src, size_t destsize);
 size_t	ft_strlcat(char *dest, char *src, size_t destsize);
 
