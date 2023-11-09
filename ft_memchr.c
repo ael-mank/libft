@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 10:05:49 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 14:09:55 by ael-mank         ###   ########.fr       */
+/*   Created: 2023/11/09 14:01:35 by ael-mank          #+#    #+#             */
+/*   Updated: 2023/11/09 14:16:18 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t size)
+void	*ft_memchr(const void *memblck, int searchedChar, size_t size)
 {
 	size_t	i;
-	char	*ptrchar;
+	char	*mem;
 
+	if (memblck == NULL)
+		return (NULL);
 	i = 0;
-	ptrchar = (char *)ptr;
+	mem = (char *)memblck;
 	while (i < size)
 	{
-		ptrchar[i] = value;
+		if (mem[i] == (char)searchedChar)
+		{
+			return (&mem[i]);
+		}
 		i++;
 	}
-	return (ptr);
+	return (NULL);
 }
