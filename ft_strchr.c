@@ -6,13 +6,13 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:53:00 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/07 14:34:47 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:33:13 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	while (*str)
 	{
