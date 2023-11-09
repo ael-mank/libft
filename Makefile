@@ -11,7 +11,6 @@ OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))
 
 $(LIBRARY_NAME): $(OBJ_FILES)
 	ar rcs $(LIBRARY_NAME) $(OBJ_FILES)
-	rm -f *.o
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@

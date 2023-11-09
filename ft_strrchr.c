@@ -6,13 +6,13 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:39:29 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/07 14:46:47 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:32:52 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	char	*last;
 

@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 09:51:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 10:14:17 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:34:49 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	s = (char *)src;
 	if (d > s)
 	{
-		while (size-- > 0)
+		while (size > 0)
 		{
 			d[size] = s[size];
+			size--;
 		}
 	}
 	else
