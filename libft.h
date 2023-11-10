@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 09:30:32 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:45:07 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_strlen(char *str);
 int		ft_isalnum(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_atoi(const char *str);
 int		ft_strncmp(const char *first, const char *second, size_t length);
 int		ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
 void	*ft_memset(void *ptr, int value, size_t size);

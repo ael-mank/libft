@@ -1,4 +1,4 @@
-LIBRARY_NAME = libft.a
+NAME = libft.a
 
 CC = cc
 
@@ -9,22 +9,22 @@ INCLUDE_DIR = include
 SRC_FILES = $(wildcard *.c)
 OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))
 
-$(LIBRARY_NAME): $(OBJ_FILES)
-	ar rcs $(LIBRARY_NAME) $(OBJ_FILES)
+$(NAME): $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
-all: $(LIBRARY_NAME)
+all: $(NAME)
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC_FILES)
 	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
 
 clean:
-	rm -f *.o $(LIBRARY_NAME)
+	rm -f *.o $(NAME)
 
 fclean: clean
-	rm -f $(LIBRARY_NAME)
+	rm -f $(NAME)
 
 re: fclean all
