@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:19:32 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 19:23:05 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:51:00 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {
-	size_t	i;
+	size_t				i;
 	unsigned const char	*p1;
 	unsigned const char	*p2;
 

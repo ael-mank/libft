@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:51:46 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/08 10:00:48 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:08:30 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_strncmp( const char *first, const char *second, size_t length )
 	size_t	i;
 
 	i = 0;
-	while (i < length)
+	if (length == 0)
+		return (0);
+	while ((i < length - 1) && (first[i] == second[i]) && first[i] != '\0')
 	{
-		if (first[i] != second[i] || first[i] == '\0' || second[i] == '\0')
-			return (first[i] - second[i]);
 		i++;
 	}
-	return (0);
+	return ((unsigned char)first[i] - (unsigned char)second[i]);
 }
