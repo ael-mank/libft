@@ -6,37 +6,29 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:41:11 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 16:06:34 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:38:32 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
-	size_t	b;
+	size_t	src_len;
+	size_t	dst_len;
 
-	i = 0;
-	j = 0;
-	b = 0;
-	if (dest == NULL || src == NULL)
-		return (0);
-	while (dest[i])
-		i++;
-	while (src[j])
-		j++;
-	if (destsize <= i)
-		j += destsize;
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (dst_len >= dstsize)
+		dst_len = dstsize;
+	if (dst_len == dstsize)
+		return (dstsize + src_len);
+	if (src_len < dstsize - dst_len)
+		ft_memcpy(dst + dst_len, src, src_len + 1);
 	else
-		j += i;
-	while (src[b] && destsize != 0 && i < (destsize - 1))
 	{
-		dest[i] = src[b];
-		i++;
-		b++;
+		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	dest[i] = '\0';
-	return (j);
+	return (dst_len + src_len);
 }

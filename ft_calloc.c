@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:21:37 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 14:53:45 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:40:17 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
+	if (size != 0 && count > (size_t) - 1 / size)
+        return (NULL);
 	res = malloc(count * size);
 	if (!res)
 		return (NULL);
