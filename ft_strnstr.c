@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:48:20 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 16:03:51 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:16:57 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,26 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	j;
+	size_t	c;
+	size_t	n_len;
+	char	*bg;
 
-	if (!big || !little)
-		return (NULL);
 	i = 0;
-	j = 0;
-	if (little[j] == '\0')
-		return ((char *)big);
-	while (big[i] && little[j] && i < len)
+	bg = (char *)big;
+	n_len = ft_strlen((char *)little);
+	if (n_len == 0 || big == little)
+		return (bg);
+	if (big == NULL || little == NULL)
+		return (0);
+	while (bg[i] != '\0' && i < len)
 	{
-		while (big[i + j] && (little[j] == big[i + j]))
-			j++;
-		if (little[j] == '\0')
-			return ((char *)big + i);
+		c = 0;
+		while (bg[i + c] != '\0' && little[c] != '\0' && bg[i + c] == little[c]
+			&& i + c < len)
+			c++;
+		if (c == n_len)
+			return (bg + i);
 		i++;
-		j = 0;
 	}
-	return (0);
+	return (NULL);
 }

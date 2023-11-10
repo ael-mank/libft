@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 18:46:56 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:30:32 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdio.h>
+# include <stddef.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int character);
