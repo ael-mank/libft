@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:59:31 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 15:18:41 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:43:45 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *source)
 	int		i;
 
 	i = 0;
-	dest = malloc(sizeof(char) * ((ft_strlen((char *)source)) + 1));
+	dest = malloc(sizeof(char) * ((ft_strlen(source)) + 1));
 	if (!dest)
 		return (NULL);
 	while (source[i])

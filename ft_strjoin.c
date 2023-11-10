@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:39:12 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 22:16:58 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:43:44 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		l1;
 	int		l2;
 
-	l1 = ft_strlen((char *)s1);
-	l2 = ft_strlen((char *)s2);
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
 	res = malloc(sizeof(char *) * (l1 + l2 + 1));
 	if (!res)
 		return (NULL);

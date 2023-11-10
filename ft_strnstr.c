@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:48:20 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 18:41:07 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:43:41 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	bg = (char *)big;
-	n_len = ft_strlen((char *)little);
+	n_len = ft_strlen(little);
 	if (n_len == 0 || big == little)
 		return (bg);
 	if (big == NULL || little == NULL)
