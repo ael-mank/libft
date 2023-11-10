@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 22:18:43 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:37:14 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int character);
 int		ft_isprint(int character);
 int		ft_isascii(int c);
-int		ft_strlen(char *str);
+int		ft_strlen(const char *str);
 int		ft_isalnum(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
