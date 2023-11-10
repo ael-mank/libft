@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 11:45:07 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:01:37 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stddef.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int character);
@@ -31,11 +32,13 @@ void	*ft_memset(void *ptr, int value, size_t size);
 void	ft_bzero(void *ptr, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t count);
 void	*ft_memmove(void *dest, const void *src, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 void	*ft_memchr(const void *memblck, int searchedChar, size_t size);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strdup(const char *source);
 size_t	ft_strlcpy(char	*dest, char	*src, size_t destsize);
-size_t	ft_strlcat(char *dest, char *src, size_t destsize);
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 
 #endif
