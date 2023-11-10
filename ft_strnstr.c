@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:48:20 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/10 11:16:57 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:41:07 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (bg[i] != '\0' && i < len)
 	{
 		c = 0;
-		while (bg[i + c] != '\0' && little[c] != '\0' && bg[i + c] == little[c]
+		while (bg[i + c] && little[c] && bg[i + c] == little[c]
 			&& i + c < len)
 			c++;
 		if (c == n_len)
