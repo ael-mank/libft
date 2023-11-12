@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/12 09:05:39 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:12:57 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int character);
@@ -34,6 +35,9 @@ void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memchr(const void *memblck, int searchedChar, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
