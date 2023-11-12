@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/11 20:04:34 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/12 09:05:39 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t count);
 void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memchr(const void *memblck, int searchedChar, size_t size);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
@@ -40,6 +41,8 @@ char	*ft_strdup(const char *source);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char	*dest, char	*src, size_t destsize);
