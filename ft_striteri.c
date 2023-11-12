@@ -6,13 +6,13 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 08:56:36 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/12 09:05:26 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/12 09:07:17 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
