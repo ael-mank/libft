@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:50:38 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/14 10:53:36 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:05:48 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,14 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
-size_t	ft_strlcpy(char	*dest, char	*src, size_t destsize);
+size_t	ft_strlcpy(char	*dest, const char	*src, size_t destsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
 int		ft_lstsize(t_list *lst);
 
 #endif
