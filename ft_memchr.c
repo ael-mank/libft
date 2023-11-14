@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:01:35 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/09 14:16:18 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:34:44 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *memblck, int searchedChar, size_t size)
 	size_t	i;
 	char	*mem;
 
-	if (memblck == NULL)
-		return (NULL);
 	i = 0;
 	mem = (char *)memblck;
 	while (i < size)

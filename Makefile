@@ -16,11 +16,16 @@ SRC_FILES = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_memchr.c ft_memmove.c \
 				
 OBJ_FILES = ${SRC_FILES:.c=.o}
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c ft_lstlast.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c ft_lstlast.c \
+		ft_lstdelone.c
 
 BONUS_OBJS	= $(BONUS:.c=.o)
 
 all: $(NAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
 
 $(NAME): $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
