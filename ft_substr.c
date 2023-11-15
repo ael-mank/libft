@@ -6,7 +6,7 @@
 /*   By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:03:14 by ael-mank          #+#    #+#             */
-/*   Updated: 2023/11/14 14:08:09 by ael-mank         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:33:38 by ael-mank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	sub = (char *)malloc(sizeof(char) * (len + 1));
+	sub = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!sub)
 		return (NULL);
 	i = start;
