@@ -2,9 +2,11 @@ NAME = libft.a
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
-INCLUDE_DIR = include
+AR	= ar rc
+
+CFLAGS = -Wall -Wextra -Werror
 
 SRC_FILES = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_memchr.c ft_memmove.c \
 				ft_putendl_fd.c ft_split.c  ft_striteri.c ft_strlcpy.c \
@@ -21,25 +23,27 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c ft_lstlast.c
 
 BONUS_OBJS	= $(BONUS:.c=.o)
 
+.c.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+$(NAME):	${OBJ_FILES}
+			${AR} ${NAME} ${OBJ_FILES}
+
 all: $(NAME)
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES)
 	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
 
-$(NAME): $(OBJ_FILES)
-	ar rcs $(NAME) $(OBJ_FILES)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
-
 clean:
-	rm -f *.o
+		${RM} ${OBJ_FILES} ${BONUS_OBJS}
 
-fclean: clean
-	rm -f $(NAME)
+fclean:		clean
+			${RM} $(NAME)
 
 re: fclean all
 
-bonus: $(BONUS_OBJS)
-		ar rcs $(NAME) $(BONUS_OBJS)
+bonus:		$(BONUS_OBJS)
+			${AR} $(NAME) $(BONUS_OBJS)
+
+.PHONY:		all clean fclean re bonus
