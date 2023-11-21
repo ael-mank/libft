@@ -19,8 +19,7 @@ This is my implementation of the standard C library functions as well as some ad
 
 ## Functions
 
-  <summary>Click to expand</summary>
-
+ 
   | String Functions      | Memory Functions          | Linked List Functions     |
   |------------------------|---------------------------|---------------------------|
   | `ft_atoi.c`           | `ft_memchr.c`             | `ft_lstadd_back.c`        |
