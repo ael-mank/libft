@@ -1,49 +1,75 @@
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/02 19:23:02 by ael-mank          #+#    #+#              #
+#    Updated: 2023/12/02 19:31:48 by ael-mank         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-CC = cc
+NAME		= libft.a
+INCLUDE		= include
+SRC_DIR		= src/
+OBJ_DIR		= obj/
+CC			= cc
+CFLAGS		= -Wall -Werror -Wextra -I$(INCLUDE)
+RM			= rm -f
+AR			= ar rcs
 
-RM = rm -f
+GREEN=\033[0;32m
+YELLOW=\033[0;33m
+BLUE=\033[0;34m
+MAGENTA=\033[0;35m
+NC=\033[0m
 
-AR	= ar rc
+# Sources
 
-CFLAGS = -Wall -Wextra -Werror
-
-SRC_FILES = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_memchr.c ft_memmove.c \
-				ft_putendl_fd.c ft_split.c  ft_striteri.c ft_strlcpy.c \
-				ft_strncmp.c ft_strtrim.c ft_toupper.c ft_bzero.c  ft_isalpha.c \
-				ft_isprint.c ft_memcmp.c ft_memset.c ft_putnbr_fd.c ft_strchr.c \
-				ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_calloc.c \
-				ft_isascii.c ft_itoa.c ft_memcpy.c ft_putchar_fd.c ft_putstr_fd.c \
-				ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_tolower.c
+SRC_FILES = ft_atoi ft_isalnum ft_isdigit ft_memchr ft_memmove \
+				ft_putendl_fd ft_split  ft_striteri ft_strlcpy \
+				ft_strncmp ft_strtrim ft_toupper ft_bzero  ft_isalpha \
+				ft_isprint ft_memcmp ft_memset ft_putnbr_fd ft_strchr \
+				ft_strjoin ft_strlen ft_strnstr ft_substr ft_calloc \
+				ft_isascii ft_itoa ft_memcpy ft_putchar_fd ft_putstr_fd \
+				ft_strdup ft_strlcat ft_strmapi ft_strrchr ft_tolower
 				
-OBJ_FILES = ${SRC_FILES:.c=.o}
+BONUS = ft_lstnew ft_lstadd_front ft_lstadd_back ft_lstsize ft_lstlast \
+		ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c ft_lstlast.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
-BONUS_OBJS	= $(BONUS:.c=.o)
+SRC_B 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ_B		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS)))
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
-$(NAME):	${OBJ_FILES}
-			${AR} ${NAME} ${OBJ_FILES}
+# Rules
 
 all: $(NAME)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES)
-	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
+$(NAME): $(OBJ)
+	@$(AR) $(NAME) $(OBJ)
+	@echo "$(GREEN)Compiled ✓ $(NAME)$(NC)"
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@echo "$(YELLOW)Compiling $<...$(NC)"
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OBJ_B)
+	@$(AR) $(NAME) $(OBJ_B)
+	@echo "$(GREEN)Compiled $(NAME) bonus ✓$(NC)"
 
 clean:
-		${RM} ${OBJ_FILES} ${BONUS_OBJS}
+	@$(RM) -rf $(OBJ_DIR)
+	@echo "$(MAGENTA)Cleaned object files ✓ $(NC)"
 
-fclean:		clean
-			${RM} $(NAME)
+fclean: clean
+	@$(RM) -f $(NAME)
+	@echo "$(MAGENTA)Cleaned $(NAME) ✓ $(NC)"
 
 re: fclean all
+	@echo "$(BLUE)Cleaned and recompiled $(NAME) ✓ $(NC)"
 
-bonus:		$(BONUS_OBJS)
-			${AR} $(NAME) $(BONUS_OBJS)
-
-.PHONY:		all clean fclean re bonus
+.PHONY: all clean fclean re bonus
