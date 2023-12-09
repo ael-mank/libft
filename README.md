@@ -5,7 +5,7 @@
   <br>
   <br>
   <center><b1>🤖 NEW : </b1></center>
-  <b>ft_printf</b> : A function that mimics the real printf function.
+  <b>[ft_printf](https://github.com/ael-mank/ft_printf)</b> : A function that mimics the real printf function.
   <br>
   <br>
    
@@ -19,6 +19,25 @@
 ## Introduction
 
 This is my implementation of the standard C library functions as well as some additional ones that I find useful. The library is called Libft, and I created it as part of my learning journey at 42.
+
+## Project Structure
+
+Ensure you have the following files in your project directory:
+
+- `Makefile`: To compile the project with various options.
+- `include/libft.h`: Header files containing function prototypes and necessary declarations.
+- `src/libft/*.c`: Source code files implementing the libft library.
+- `src/ft_printf/*.c`: Source code files implementing the `ft_printf()` function and supporting functions.
+
+## Makefile Commands
+
+- `make`: Compiles the project and creates the `libft.a` library.
+- `make bonus` : Adds the bonus linked lists functions to the library.
+- `make printf` : Adds the ft_printf function to the library.
+- `make help`: Displays a list of available commands.
+- `make clean`: Removes object files, keeping only the source code.
+- `make fclean`: Cleans the project by removing the compiled library and object files.
+- `make re`: Performs a full recompilation by cleaning and then recompiling the project.
 
 ## Functions
 
