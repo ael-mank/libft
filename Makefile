@@ -6,7 +6,7 @@
 #    By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 19:23:02 by ael-mank          #+#    #+#              #
-#    Updated: 2023/12/02 19:38:57 by ael-mank         ###   ########.fr        #
+#    Updated: 2023/12/09 16:53:19 by ael-mank         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC_DIR		= src/
 OBJ_DIR		= obj/
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra -I$(INCLUDE)
+DEBUG_FLAGS = -g
 RM			= rm -f
 AR			= ar rcs
 
@@ -44,7 +45,7 @@ OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 SRC_B 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ_B		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(BONUS)))
 
-# Rules
+.PHONY: all clean fclean re help debug norm
 
 all: $(NAME)
 
@@ -57,9 +58,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJ_B)
-	@$(AR) $(NAME) $(OBJ_B)
-	@echo "$(GREEN)Compiled $(NAME) bonus ✓$(NC)"
+bonus:$(NAME)
 
 clean:
 	@$(RM) -rf $(OBJ_DIR)
@@ -72,4 +71,18 @@ fclean: clean
 re: fclean all
 	@echo "$(BLUE)Cleaned and recompiled $(NAME) ✓ $(NC)"
 
-.PHONY: all clean fclean re bonus
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: all
+
+norm:
+	@norminette $(SRC) $(INCLUDE) | grep -v Norme -B1 || true
+
+help:
+	@echo "Available targets:"
+	@echo "  $(BLUE)all$(NC)   : Build the project"
+	@echo "  $(BLUE)clean$(NC) : Remove object files"
+	@echo "  $(BLUE)fclean$(NC): Remove object files and the executable"
+	@echo "  $(BLUE)re$(NC)    : Rebuild the project"
+	@echo "  $(BLUE)bonus$(NC) : Build the project with bonus features"
+	@echo "  $(BLUE)debug$(NC) : Build the project with debug flags"
+	@echo "  $(BLUE)norm$(NC)  : Check the norm of the project"
