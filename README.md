@@ -39,7 +39,7 @@ This is my implementation of the standard C library functions as well as some ad
 | `ft_strrchr.c`   |                  |                       |
 | `ft_strtrim.c`   |                  |                       |
 | `ft_substr.c`    |                  |                       |
-| `ft_printf.c`    |                  |                       |
+| `✨ ft_printf.c` |                  |                       |
 
 ## Usage
 
