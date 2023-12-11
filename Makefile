@@ -6,7 +6,7 @@
 #    By: ael-mank <ael-mank@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 19:23:02 by ael-mank          #+#    #+#              #
-#    Updated: 2023/12/09 19:02:52 by ael-mank         ###   ########.fr        #
+#    Updated: 2023/12/11 09:09:28 by ael-mank         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,7 +100,7 @@ debug: CFLAGS += $(DEBUG_FLAGS)
 debug: all
 
 norm:
-	@norminette $(SRC) $(INCLUDE) | grep -v Norme -B1 || true
+	@norminette */* | grep -v Norme -B1 || true
 
 help:
 	@echo "Available targets:"
