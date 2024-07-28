@@ -7,6 +7,7 @@
   <center><b1>🤖 NEW : </b1></center>
   
   [ft_printf](https://github.com/ael-mank/ft_printf)  : A function that mimics the real printf function.
+  [get_next_line](https://github.com/ael-mank/GetNextLine)  : A function that reads a file line by line.
   <br>
   <br>
    
@@ -59,7 +60,8 @@ Ensure you have the following files in your project directory:
 | `ft_strrchr.c`   |                  |                       |
 | `ft_strtrim.c`   |                  |                       |
 | `ft_substr.c`    |                  |                       |
-| `✨ ft_printf.c` |                  |                       |
+| `ft_printf.c`    |                  |                       |
+| `get_next_line.c`|                  |                       |
 
 ## Usage
 
