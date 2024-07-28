@@ -7,8 +7,7 @@
   <center><b1>🤖 NEW : </b1></center>
   
   [ft_printf](https://github.com/ael-mank/ft_printf)  : A function that mimics the real printf function.
-  <br>
-  [get_next_line](https://github.com/ael-mank/GetNextLine)  : A function that reads a file line by line.
+  <br>[get_next_line](https://github.com/ael-mank/GetNextLine)  : A function that reads a file line by line.
   <br>
   <br>
    
